@@ -46,7 +46,7 @@ export default function Login(){
                 />
                 <button
                     type="submit"
-                    className={`${styleButtomPrimary} bg-[${primary}] hover:bg-[${primary}]/50 `}
+                    className={`${styleButtomPrimary} `}
                 >
                     Iniciar Sesion
                 </button>

@@ -6,7 +6,7 @@ export default function Logo(){
                 <h1 id="store-name"
                     className="text-4xl flex-none"
                 >
-                    MOE'S
+                    MOE
                 </h1>
                 </Link>
     )
