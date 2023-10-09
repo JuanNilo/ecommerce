@@ -20,12 +20,17 @@ function SignIn() {
 
   return (
     <div>
-      <FormTemplate
-        titulo={"Registrar cuenta"}
-        subtitulo={"Ingrese sus datos para registrar cuenta"}
-      >
+      <form action="post">
+      <FormTemplate>
+        <div className="w-[80%]">
+
+        <img 
+            className="mx-auto pointer-events-none cursor-not-allowed w-[60%] 2xl:w-[80%]" 
+            src={"https://media.discordapp.net/attachments/498604686077722655/1153122372115775559/logo-rectangular.jpg"} 
+            alt={''}
+        />
+        <h1 className=" text-3xl 2xl:text-5xl my-2">Registrarse</h1>
         {/* Correo */}
-        <form onSubmit={handleRegister} className="space-y-6" action="#" method="POST">
 
         <label htmlFor="email" className={`${styleLabel}`}>
           Correo
@@ -67,14 +72,16 @@ function SignIn() {
           required
           className={styleInput}
         />
+        </div>
 
+        <div className="w-[80%]">
         <DatosExtra/>
 
         {/* Botones */}
         <button
           type="submit"
           className={`${styleButtomPrimary} `}
-        >
+          >
           Registrarse
         </button>
         <Link href={"/user/login"}>
@@ -82,9 +89,10 @@ function SignIn() {
             Iniciar Sesion
           </button>
         </Link>
-        </form>
+          </div>
 
       </FormTemplate>
+      </form>
     </div>
   );
 }

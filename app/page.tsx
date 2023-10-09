@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div
-      className=' w-[100vh] h-[100%] flex mx-auto bg-red-700'
+      className=' w-[60%] h-[100%] flex mx-auto bg-white'
     >
       <HomePage/>
     </div>

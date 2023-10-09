@@ -1,8 +1,12 @@
-'use client'
-import React from "react";
-import { useState, useEffect } from "react";
 
-export default function Products() {
+import React from "react";
+import ProductCard from "../extras/ui-elements/ProductCard";
+const fetchProducts = () => {
+    return fetch("https://fakestoreapi.com/products/category/electronics")
+    .then(response => response.json())
+  }
+
+export default async function Products() {
 
     interface Product {
         id: number;
@@ -17,35 +21,19 @@ export default function Products() {
         };
       }
 
-    const [products, setProducts] = useState<any>([]);
-
-    useEffect(() => {
-        loadData();
-    }, []);
-
-    const loadData = () => {
-        // fetch("https://fakestoreapi.com/products?limit=10")
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     console.log(data);
-        //     setProducts(...data);
-        //   })
-        //   .catch(error => console.log(error));
-        fetch('https://fakestoreapi.com/products?limit=5')
-            .then(res=>res.json())
-            .then(json=>setProducts(json))
-      };
+    const products = await fetchProducts()
+     
 
     return (
-        <div className="w-[100%] h-[70vh]">
+        <div className="w-[100%] h-[100%]">
             <h1>Productos</h1>
-            {loadData()}
-            {products.map((product: any) => (
-              <div key={product.id} className=" w-[150px] h-[150px]">
-                <p>Nombre</p>
-                <h2>{product.title}</h2>
-              </div>
-            ))}
+            <ul className="grid grid-cols-3 gap-4">
+              {products.map((product : Product )=> (
+                <li key={product.id} className="">
+                   <ProductCard product={product} />
+                </li>
+              ))}
+            </ul>
           </div>
     );
 }
