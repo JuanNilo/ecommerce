@@ -1,11 +1,11 @@
 
-export const primaryColor = "#9A1AD5"
+export const primaryColor = "#040535"
 
 export const Colors = {
     primary: primaryColor,
     secondary: "#D9D9D9",
     brand: "#5E5E5E",
-    tertiary: "#ffffff",
+    tertiary: "#f1debd",
 }
 
 export const Styles = {
