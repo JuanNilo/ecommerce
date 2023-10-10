@@ -7,7 +7,10 @@ export default function CategoriasLayout({
   }) {
     return (
       <div className=" w-[90%] mx-auto">
+        <div className="flex w-[80%] mx-auto">
         <CategoryNav/>
+          
+        </div>
         {children}
       </div>
     )

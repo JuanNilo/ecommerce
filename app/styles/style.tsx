@@ -4,7 +4,7 @@ export const primaryColor = "#040535"
 export const Colors = {
     primary: primaryColor,
     secondary: "#D9D9D9",
-    brand: "#5E5E5E",
+    brand: "#5a5c75",
     tertiary: "#f1debd",
 }
 

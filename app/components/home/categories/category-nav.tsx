@@ -8,7 +8,7 @@ export default function CategoryNav(){
     return(
         <div 
             style={{backgroundColor: primary}}
-            className="h-[10%] w-[100%] my-4 rounded-md">
+            className="h-[70%] w-[100%] my-4 rounded-md">
         {/* Contenido */}
         <ul className="flex w-[80%] h-[100%] justify-center gap-6 mx-auto">
             {categorias.map((categoria )=> (

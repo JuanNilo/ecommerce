@@ -8,7 +8,7 @@ export default function SearchBar(){
 
     return(
         <section
-        style={{backgroundColor:secondary}}
+        style={{backgroundColor:tertiary}}
         className="rounded-full w-[35%] ml-10 flex items-center"
     >
         <input 
@@ -16,8 +16,8 @@ export default function SearchBar(){
             name=""
             id=""
             placeholder="Buscar productos..."
-            style={{backgroundColor:secondary}}
-            className="p-2 border-none rounded-full w-[90%]"
+            style={{backgroundColor:tertiary}}
+            className="p-2 border-none rounded-full w-[90%] placeholder-gray-950 text-black font-bold"
         />
         <BsSearch 
             className="text-black mx-auto"

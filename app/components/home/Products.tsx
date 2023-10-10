@@ -1,37 +1,29 @@
-
 import React from "react";
 import ProductCard from "../extras/ui-elements/ProductCard";
-const fetchProducts = () => {
-    return fetch("https://fakestoreapi.com/products/category/electronics")
-    .then(response => response.json())
-  }
+import { products } from "./../extras/products/productos.json";
+import { Colors } from "@/app/styles/style";
+import Link from "next/link";
 
-export default async function Products() {
+const {tertiary, brand} = Colors
 
-    interface Product {
-        id: number;
-        title: string;
-        price: number;
-        description: string;
-        category: string;
-        image: string;
-        rating: {
-          rate: number;
-          count: number;
-        };
-      }
-
-    const products = await fetchProducts()
-     
+export default async function Products() {  
 
     return (
-        <div className="w-[100%] h-[100%]">
-            <h1>Productos</h1>
-            <ul className="grid grid-cols-3 gap-4">
-              {products.map((product : Product )=> (
-                <li key={product.id} className="">
-                   <ProductCard product={product} />
-                </li>
+        <div className="w-[100%] h-[100%] text-center">
+            <h2 className=" text-3xl mb-6" style={{color: tertiary}}>Productos</h2>
+            <ul className="grid grid-cols-4 gap-4">
+              {products.map((product )=> (
+                <Link href={`productos/${product.id}`} key={product.id} style={{backgroundColor: brand}} className=" text-center rounded-xl">
+                  <div className="h-[20%] px-2">
+                      <p className=" text-2xl py-3 font-bold"
+                        style={{color: tertiary}}>
+                          {product.nombre}
+                      </p>
+                   </div>
+                   <div className=" bg-white h-[60%] flex items-center justify-center">
+                    <img src={product.imagen} alt="" className="h-[80%]"/>
+                   </div>
+                </Link>
               ))}
             </ul>
           </div>
