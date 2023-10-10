@@ -23,6 +23,11 @@ export default async function Products() {
                    <div className=" bg-white h-[60%] flex items-center justify-center">
                     <img src={product.imagen} alt="" className="h-[80%]"/>
                    </div>
+                   <div className=" h-[20%] flex items-center justify-center font-bold">
+                    <p style={{color:"white"}} className="text-xl">
+                      Precio: {product.precio}
+                    </p>
+                   </div>
                 </Link>
               ))}
             </ul>
