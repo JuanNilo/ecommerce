@@ -4,8 +4,12 @@ import React, { useState, useEffect } from "react";
 import { BiEdit } from "react-icons/bi";
 
 const { primary, secondary, tertiary } = Colors;
+
+
 function homePage() {
+    const [editMode, setEditMode] = useState(false);
     return (
+
         /* Rectangulo principal del usuario */
         <div
             style={{ backgroundColor: tertiary }}
@@ -18,8 +22,9 @@ function homePage() {
                     className="h-[95%] w-[350px] rounded-md flex-col relative"
                 >
                     {/* Botón de edición */}
-                    <button className="absolute top-0 right-0 m-1 p-2">
-                        <BiEdit className="text-[2rem] fill-white hover:fill-[#ff7795] transition-all" />
+
+                    <button className="absolute top-0 right-0 m-1 p-2" onClick={() => setEditMode(!editMode)}>
+                        <BiEdit className="text-[2rem] fill-white" />
                     </button>
                     {/* Contenedor de la imagen */}
                     <div className="flex items-center justify-center h-[240px] p-4 m-2">
@@ -30,10 +35,38 @@ function homePage() {
                         />
                     </div>
                     {/* Especificaciones del usuario */}
-                    <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">Camilonga</a>
-                    <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">Camilonga@longa.cl</a>
-                    <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">66.666.666-6</a>
-                    <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">VallenarCity</a>
+                    {editMode ? (
+                        <div>
+                            <input
+                                className="bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center"
+                                type="text"
+                                value="Nombre"
+                            />
+                            <input
+                                className="bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center"
+                                type="text"
+                                value="Email"
+                            />
+                            <input
+                                className="bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center"
+                                type="text"
+                                value="Rut"
+                            />
+                            <input
+                                className="bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center"
+                                type="text"
+                                value="Ciudad"
+                            />
+                            <button className='text-sm text-white transition duration-150 hover:bg-[#b6efb0] bg-[#93c47d]  font-bold py-2 px-6 rounded flex items-center justify-center'>Modificar Datos</button>
+                        </div>
+                    ) : (
+                        <div>
+                            <a className="bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">Camilonga</a>
+                            <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">Camilonga@longa.cl</a>
+                            <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">66.666.666-6</a>
+                            <a className=" bg-white dark:bg-gray-800 text-xl text-gray-900 uppercase dark:text-gray-400 m-4 flex items-center justify-center">VallenarCity</a>
+                        </div>
+                    )}
                 </div>
             </div>
             {/* Tabla datos con registro compra*/}
