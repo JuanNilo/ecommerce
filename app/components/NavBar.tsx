@@ -4,6 +4,7 @@ import { BsCart2 } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import SearchBar from "./extras/ui-elements/SearchBar";
 import Logo from "./extras/ui-elements/Logo";
+import SelectoSucursal from "./extras/ui-elements/SelectorSucursal";
 
 const {primary, secondary, tertiary} = Colors;
 
@@ -16,6 +17,7 @@ export default function NabBar(){
         {/* Lado derecho */}
         <div className="w-[50%] flex">
             <Logo/>
+            <SelectoSucursal/>
             <SearchBar /> 
         </div>
         {/* Parte izquierda */}
