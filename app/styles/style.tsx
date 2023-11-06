@@ -13,9 +13,9 @@ export const Styles = {
 
     styleLabel: 'block text-sm 2xl:text-xl font-medium leading-6 text-gray-900 2x:mt-6 mt-4',
 
-    styleButtomPrimary: `bg-[#9A1AD5] flex w-full justify-center rounded-md px-3 py-1.5 text-sm 2xl:text-lg font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 my-6 text-select-none`,
+    styleButtomPrimary: `bg-[#9A1AD5] flex w-9/12 justify-center rounded-md px-3 py-1.5 text-sm 2xl:text-lg font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 my-6 text-select-none`,
 
-    styleButtomSecondary: `bg-[#5E5E5E] flex w-full justify-center rounded-md px-3 py-1.5 text-sm 2xl:text-lg font-semibold leading-6 text-white shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 my-6 text-select-none`,
+    styleButtomSecondary: `bg-[#5E5E5E] flex w-9/12 justify-center rounded-md px-3 py-1.5 text-sm 2xl:text-lg font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 my-6 text-select-none`,
 
     styleRectangle: 'w-56 h-28 rounded-md bg-red-500'
 }
