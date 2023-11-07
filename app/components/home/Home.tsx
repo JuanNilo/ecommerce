@@ -10,7 +10,7 @@ export default function HomePage(){
             <div className="h-[10%]">
                 <CategoryNav/>
             </div>
-            <div className=" h-[40%]">
+            <div className=" h-[25%]">
                 <Slider/>
             </div>
             <Products></Products>        
