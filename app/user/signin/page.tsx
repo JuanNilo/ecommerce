@@ -7,93 +7,112 @@ import { Styles, Colors } from "@/app/styles/style";
 import Link from "next/link";
 import DatosExtra from "./DatosExtra";
 
-const {styleInput, styleLabel, styleButtomPrimary, styleButtomSecondary} = Styles;
+const { styleInput, styleLabel, styleButtomPrimary, styleButtomSecondary } = Styles;
 
-const {primary, secondary, tertiary} = Colors;
+const { primary, secondary, tertiary } = Colors;
 
 function SignIn() {
-    const [datosExtra, setDatosExtra] = useState(false);
+  const [datosExtra, setDatosExtra] = useState(false);
 
-    const handleRegister = () =>{
-        setDatosExtra(!datosExtra);
-    }
+  const handleRegister = () => {
+    setDatosExtra(!datosExtra);
+  }
 
   return (
-    <div>
-      <form action="post">
-      <FormTemplate>
-        <div className="w-[80%]">
+    /* Contenedor principal */
+    <div
+      style={{ backgroundColor: tertiary }}
+      className="box-content h-[500px] w-9/12 mx-auto my-10 grid grid-cols-5 rounded-md"
+    >
+      {/* Contenedor Imagen */}
+      <div className="col-span-2 bg-teal-400 rounded-md">
 
-        <img 
-            className="mx-auto pointer-events-none cursor-not-allowed w-[60%] 2xl:w-[80%]" 
-            src={"https://media.discordapp.net/attachments/498604686077722655/1153122372115775559/logo-rectangular.jpg"} 
-            alt={''}
-        />
-        <h1 className=" text-3xl 2xl:text-5xl my-2">Registrarse</h1>
-        {/* Correo */}
+      </div>
+      {/* Contenedor registros */}
+      <div
+        style={{ background: primary }}
+        className="h-[90%] w-9/12 rounded-md col-span-3 relative mx-auto my-auto"
+      >
+        <div className="grid grid-cols-2 flex items-center justify-center ">
+          <h1 style={{ color: tertiary }} className="text-4xl m-4 col-span-2 divide-y-5">Registrarse</h1>
+          {/* Datos primera columna */}
+          <div className="col-span-1 mx-auto ">
+            <h2 style={{ color: tertiary }} className="text-xl mx-5 mb-1">Correo Electronico *</h2>
+            <input
+              className="bg-white dark:bg-gray-800 text-xl text-gray-900 dark:text-gray-400 w-10/12 rounded-md mb-5 mx-5"
+              type="text"
+              value=""
+              name="email"
+              required
 
-        <label htmlFor="email" className={`${styleLabel}`}>
-          Correo
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          autoComplete="email"
-          required
-          onChange={(e) => console.log(e.target.value)}
-          className={styleInput}
-        />
-        {/* Contraseña */}
-        <label htmlFor="password" className={`${styleLabel}`}>
-          Contraseña
-        </label>
+            />
+            <h2 style={{ color: tertiary }} className="text-xl mx-5 mb-1">Contraseña *</h2>
+            <input
+              className="bg-white dark:bg-gray-800 text-xl text-gray-900 dark:text-gray-400 w-10/12 rounded-md mb-5 mx-5"
+              type="text"
+              value=""
+              name="email"
+              required
 
-        <input
-          type="password"
-          id="password"
-          name="password"
-          autoComplete="current-password"
-          required
-          className={styleInput}
-          
-        />
-        {/* Confirmar Contraseña */}
+            />
+            <h2 style={{ color: tertiary }} className="text-xl mx-5 mb-1">Nombre</h2>
+            <input
+              className="bg-white dark:bg-gray-800 text-xl text-gray-900 dark:text-gray-400 w-10/12 rounded-md mb-5 mx-5"
+              type="text"
+              value=""
+              name="email"
+              required
 
-        <label htmlFor="confirm-password" className={`${styleLabel}`}>
-          Confirmar contraseña
-        </label>
+            />
+          </div>
 
-        <input
-          type="password"
-          id="confirm-password"
-          name="confirm-password"
-          autoComplete="current-password"
-          required
-          className={styleInput}
-        />
+          {/* Datos segunda columna */}
+          <div className="col-span-1 mx-auto">
+            <h2 style={{ color: tertiary }} className="text-xl mx-5 mb-1">Rut</h2>
+            <input
+              className="bg-white dark:bg-gray-800 text-xl text-gray-900 dark:text-gray-400 w-10/12 rounded-md mb-5 mx-5"
+              type="text"
+              value=""
+              name="rut"
+              required
+            />
+            <h2 style={{ color: tertiary }} className="text-xl mx-5 mb-1">Contraseña anterior *</h2>
+            <input
+              className="bg-white dark:bg-gray-800 text-xl text-gray-900 dark:text-gray-400 w-10/12 rounded-md mb-5 mx-5"
+              type="text"
+              value=""
+              name="rut"
+              required
+            />
+            <h2 style={{ color: tertiary }} className="text-xl mx-5 mb-1">Ciudad</h2>
+            <input
+              className="bg-white dark:bg-gray-800 text-xl text-gray-900 dark:text-gray-400 w-10/12 rounded-md mb-5 mx-5"
+              type="text"
+              value=""
+              name="rut"
+              required
+            />
+          </div>
+
         </div>
-
-        <div className="w-[80%]">
-        <DatosExtra/>
-
         {/* Botones */}
         <button
           type="submit"
-          className={`${styleButtomPrimary} `}
-          >
-          Registrarse
-        </button>
-        <Link href={"/user/login"}>
-          <button className={`${styleButtomSecondary} `}>
-            Iniciar Sesion
-          </button>
-        </Link>
-          </div>
+          className={`${styleButtomPrimary} flex items-center justify-center my-2 mx-auto w-11/12`}
+        >
+          <Link href={'/user/login'}>Registrarse</Link>
 
-      </FormTemplate>
-      </form>
-    </div>
+        </button>
+
+        <button
+          type="submit"
+          className={`${styleButtomSecondary} flex items-center justify-center my-2 mx-auto w-11/12`}
+        >
+          <Link href={'/'}>Volver</Link>
+
+        </button>
+      </div>
+    </div >
   );
 }
 

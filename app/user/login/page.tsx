@@ -36,22 +36,22 @@ export default function Login() {
                     type="password"
                     value=""
                     name="password"
-                    autoComplete=""
                     required
                 />
                 <button
                     type="submit"
-                    className={`${styleButtomPrimary} `}
+                    className={`${styleButtomPrimary} flex items-center justify-center my-3 mx-auto w-9/12`}
                 >
                     Iniciar Sesion
                 </button>
-                <Link href={'/user/signin'}>
-                    <button
-                        className={`${styleButtomSecondary} `}
-                    >
-                        Registrase
-                    </button>
-                </Link>
+
+                <button
+                    className={`${styleButtomSecondary} flex items-center justify-center my-3 mx-auto w-9/12`}
+                >
+                    <Link href={'/user/signin'}>Registrarse</Link>
+
+                </button>
+
             </div>
             {/*Contenedor Imagen*/}
             <div className="col-span-2 bg-teal-400 rounded-md">
@@ -62,56 +62,5 @@ export default function Login() {
                 />
             </div>
         </div>
-
-        /*
-        <div >
-            <FormTemplate 
-                titulo={'Iniciar sesion'}
-                subtitulo={"Inicia sesion con tu cuenta"}
-            >
-                <label
-                    htmlFor="email"
-                    className={`${styleLabel}`}
-                >
-                    Correo
-                </label>
-                <input 
-                    type="email"
-                    id="email"
-                    name="email"
-                    autoComplete="email"
-                    required
-                    className={styleInput}
-                />
-                 <label
-                    htmlFor="password"
-                    className={`${styleLabel}`}
-                >
-                    Contraseña
-                </label>
-                <input 
-                    type="password"
-                    id="password"
-                    name="password"
-                    autoComplete="current-password"
-                    required
-                    className={styleInput}
-                />
-                <button
-                    type="submit"
-                    className={`${styleButtomPrimary} `}
-                >
-                    Iniciar Sesion
-                </button>
-                <Link href={'/user/signin'}>
-                    <button
-                        
-                        className={`${styleButtomSecondary} `}
-                        >
-                        Registrase
-                    </button>
-                </Link>
-            </FormTemplate>
-        </div> */
     )
 }
