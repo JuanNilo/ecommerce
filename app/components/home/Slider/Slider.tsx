@@ -1,12 +1,12 @@
 
 'use client'
-import { useState } from "react";
+import React, { useState } from "react";
 import { Colors } from "@/app/styles/style";
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const { tertiary } = Colors;
 
-export default function Slider() {
+ const Slider : React.FC = () => {
     const images = [
         "https://www.booz.cl/_next/image?url=https%3A%2F%2Fd3w3u0f6pasxxu.cloudfront.net%2Foptimized%2F1456d24c0043138f0358882426c2b39c-3x.jpeg&w=2048&q=75",
         "https://www.booz.cl/_next/image?url=https%3A%2F%2Fd3w3u0f6pasxxu.cloudfront.net%2Foptimized%2F2f0f36dffe62f47955d3b28c280274e4-3x.jpeg&w=2048&q=75",
@@ -17,6 +17,7 @@ export default function Slider() {
     const [currentIndex, setCurrentIndex] = useState(1);
 
     const handlePrevClick = () => {
+        console.log('gola')
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? images.length - 1 : prevIndex - 1
         );
@@ -43,10 +44,11 @@ export default function Slider() {
                     />
                 ))}
                 <button
+                onClick={() => handlePrevClick}
                     className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white hover:text-blue-300 font-bold py-2 px-4 rounded-l"
-                    onClick={console.log("click")}
+                    
                 >
-                    <BsFillArrowLeftCircleFill size={30} />
+                    prev
                 </button>
                 <button
                     className="absolute top-1/2 right-0 transform -translate-y-1/2  text-white hover:text-blue-300 font-bold py-2 px-4 rounded-r"
@@ -58,3 +60,5 @@ export default function Slider() {
         </div>
     );
 }
+
+export default Slider;
