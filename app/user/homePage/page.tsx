@@ -8,12 +8,17 @@ const { primary, secondary, tertiary } = Colors;
 
 function homePage() {
     const [editMode, setEditMode] = useState(false);
+    const handleEdit = () => {
+        console.log('hola')
+    }
+
+   
     return (
 
         /* Rectangulo principal del usuario */
         <div
             style={{ backgroundColor: tertiary }}
-            className="my-10 mx-20 rounded-md flex grid grid-cols-3 gap-4 justify-items-auto p-2"
+            className="my-10 mx-20 rounded-md flex grid-cols-3 gap-4 justify-items-auto p-2"
         >
             <div className="h-[500px] rounded-md flex-auto box-content p-4 cols-span-1">
                 {/* Rectangulo datos del usuario */}
@@ -23,7 +28,7 @@ function homePage() {
                 >
                     {/* Botón de edición */}
 
-                    <button className="absolute top-0 right-0 m-1 p-2" onClick={() => setEditMode(!editMode)}>
+                    <button className="absolute top-0 right-0 m-1 p-2"  onClick={() => setEditMode(!editMode)}>
                         <BiEdit className="text-[2rem] fill-white" />
                     </button>
                     {/* Contenedor de la imagen */}

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Colors } from "../styles/style"
-import { BsCart2 } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import SearchBar from "./extras/ui-elements/SearchBar";
 import Logo from "./extras/ui-elements/Logo";
 import SelectoSucursal from "./extras/ui-elements/SelectorSucursal";
+import Carrito from "./home/Carrito";
 
 const {primary, secondary, tertiary} = Colors;
 
@@ -22,6 +22,7 @@ export default function NabBar(){
         </div>
         {/* Parte izquierda */}
         <div className="w-[50%] flex justify-end">
+          <Carrito/>
           <Link 
             href={'/user/login'} 
             > 
